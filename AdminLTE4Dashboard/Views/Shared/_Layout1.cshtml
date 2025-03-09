@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>@ViewData["Title"] - AdminLTE v4 | Dashboard</title>
+  @await Html.PartialAsync("_Metas")
+  @await Html.PartialAsync("_Styles")
+  @await RenderSectionAsync("Styles", required: false)
+</head>
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+  <div class="app-wrapper">
+    @await Html.PartialAsync("_Header")
+    @await Html.PartialAsync("_Sidebar")
+    <main class="app-main">
+      <div class="app-content-header">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6"><h3 class="mb-0">Dashboard</h3></div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-end">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="app-content">
+        <div class="container-fluid">
+          @RenderBody()
+        </div>
+      </div>
+    </main>
+    @await Html.PartialAsync("_Footer")
+  </div>
+  @await RenderSectionAsync("Scripts", required: false)
+  @await Html.PartialAsync("_Scripts")
+</body>
+</html>
